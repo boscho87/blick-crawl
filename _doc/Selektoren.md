@@ -1,7 +1,9 @@
 ## Selektoren
- Abholen der Daten
+
+Abholen der Daten
 
 #### Archiv
+
 ```python
 # Einträge
 posts = response.css('div.flexitem')
@@ -10,7 +12,9 @@ posts.css('a.clickable').get()
 # relative urls
 posts.css('a.clickable::attr("href")').get()
 ```
+
 #### Posts
+
 ```python
 # url
 response.url
@@ -27,9 +31,9 @@ response.css(".flexitem .pianocontainer + div span::text").get()
 # public date
 response.css(".article-metadata > div > div::text").get()
 # update date
-response.css(".article-metadata > div > div + div + div ::text").get()
+response.css(".article-metadata > div > div + div + div ::text").get().strip()
 # text (html)
-response.css(".article-body").getall()
-# hat kommentare (0 = hat auch aber der count ist 0)
+response.css(".article-body").getall()  # evt. ohne getall umm daten später zu holen (oder html speichern)
+# comments (0 = comments  if comments inactive -> is empty)
 response.css(".comment-button::text").get()
 ``` 
