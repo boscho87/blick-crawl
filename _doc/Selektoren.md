@@ -1,20 +1,18 @@
-## Selektoren
+## Selectors
+Fetch the Data
 
-Abholen der Daten
-
-#### Archiv
-
+#### Current Day Page
+`https://www.blick.ch/services/webarchiv/`
 ```python
-# Einträge
+# posts
 posts = response.css('div.flexitem')
-# Links
+# links
 posts.css('a.clickable').get()
-# relative urls
+# relative Url's to the post
 posts.css('a.clickable::attr("href")').get()
 ```
 
 #### Posts
-
 ```python
 # url
 response.url
