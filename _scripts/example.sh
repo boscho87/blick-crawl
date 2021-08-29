@@ -9,7 +9,7 @@ container_id_es=$(docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=sin
 container_id_es_splash=$(docker run -d -p 8050:8050 scrapinghub/splash)
 
 echo "Wait for Containers to start"
-sleep 10
+sleep 12
 source $project_dir/venv/bin/activate
 scrapy crawl blick -o $FILE_NAME
 echo "Stop Docker $container_id_es"
