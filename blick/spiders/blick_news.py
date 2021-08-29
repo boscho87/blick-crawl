@@ -1,12 +1,16 @@
 from datetime import datetime
 import scrapy, time
+from scrapy_splash import  SplashRequest
 
 
 class BlickNews(scrapy.Spider):
     name = 'blick'
-    start_urls = [
-        'https://www.blick.ch/services/webarchiv/',
-    ]
+
+    def start_requests(self):
+        yield SplashRequest(
+            url='https://www.blick.ch/services/webarchiv/',
+            callback=self.parse
+        )
 
     def parse(self, response):
         for link in response.css('div.flexitem a.clickable::attr("href")'):
