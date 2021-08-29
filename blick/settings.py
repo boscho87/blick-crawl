@@ -96,3 +96,13 @@ SPIDER_MIDDLEWARES = {
     'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
 }
 DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+
+ITEM_PIPELINES = {
+    'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline': 500
+}
+
+ELASTICSEARCH_SERVERS = ['localhost']
+ELASTICSEARCH_INDEX = 'scrapy'
+#ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m'
+ELASTICSEARCH_TYPE = 'items'
+ELASTICSEARCH_UNIQ_KEY = 'url'  # Custom unique key
