@@ -1,15 +1,17 @@
-## Selektoren
- Abholen der Daten
+## Selectors
+Fetch the Data
 
-#### Archiv
+#### Current Day Page
+`https://www.blick.ch/services/webarchiv/`
 ```python
-# Einträge
+# posts
 posts = response.css('div.flexitem')
-# Links
+# links
 posts.css('a.clickable').get()
-# relative urls
+# relative Url's to the post
 posts.css('a.clickable::attr("href")').get()
 ```
+
 #### Posts
 ```python
 # url
@@ -27,9 +29,9 @@ response.css(".flexitem .pianocontainer + div span::text").get()
 # public date
 response.css(".article-metadata > div > div::text").get()
 # update date
-response.css(".article-metadata > div > div + div + div ::text").get()
+response.css(".article-metadata > div > div + div + div ::text").get().strip()
 # text (html)
-response.css(".article-body").getall()
-# hat kommentare (0 = hat auch aber der count ist 0)
+response.css(".article-body").getall()  # evt. ohne getall umm daten später zu holen (oder html speichern)
+# comments (0 = comments  if comments inactive -> is empty)
 response.css(".comment-button::text").get()
 ``` 
