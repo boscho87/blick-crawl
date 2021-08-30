@@ -68,6 +68,8 @@ class BlickNews(scrapy.Spider):
             'reaction_like': comment_data['reaction1_count'],
             'reaction_disagree': comment_data['reaction2_count'],
             'user_enabled': comment_data['user']['status_id'],
+            'user_id': comment_data['user']['user_id'],
+            'comment_id': comment_data['id'],
         }
         if go_deeper:
             data['answers'] = self.extract_answers(comment_data['answers']),
