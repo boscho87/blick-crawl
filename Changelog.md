@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Implement Crawl
-- Ignore Archive Url's
-- Splash to Fetch dynamic generated content 
+- Ignore Archive Url's 
+- Comment Crawler
 
 ## [0.0.1]
 ### Added
