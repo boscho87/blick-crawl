@@ -8,14 +8,11 @@
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 BOT_NAME = 'blick'
-
 SPIDER_MODULES = ['blick.spiders']
 NEWSPIDER_MODULE = 'blick.spiders'
 
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'blick (+http://www.yourdomain.com)'
-
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
@@ -86,21 +83,20 @@ ROBOTSTXT_OBEY = False
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-SPLASH_URL = 'http://localhost:8050'
-DOWNLOADER_MIDDLEWARES = {
-    'scrapy_splash.SplashCookiesMiddleware': 723,
-    'scrapy_splash.SplashMiddleware': 725,
-    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
-}
-SPIDER_MIDDLEWARES = {
-    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
-}
-DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
-
-ITEM_PIPELINES = {
-    'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline': 500
-}
-
+#SPLASH_URL = 'http://localhost:8050'
+#DOWNLOADER_MIDDLEWARES = {
+#    'scrapy_splash.SplashCookiesMiddleware': 723,
+#    'scrapy_splash.SplashMiddleware': 725,
+#    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
+#}
+#SPIDER_MIDDLEWARES = {
+#    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
+#}
+#DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+#
+#ITEM_PIPELINES = {
+#    'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline': 500
+#}
 ELASTICSEARCH_SERVERS = ['localhost']
 ELASTICSEARCH_INDEX = 'scrapy'
 #ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m'
