@@ -93,11 +93,11 @@ ROBOTSTXT_OBEY = False
 #}
 #DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
 #
-#ITEM_PIPELINES = {
-#    'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline': 500
-#}
+ITEM_PIPELINES = {
+    'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline': 500
+}
 ELASTICSEARCH_SERVERS = ['localhost']
-ELASTICSEARCH_INDEX = 'scrapy'
+ELASTICSEARCH_INDEX = 'blick'
 #ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m'
 ELASTICSEARCH_TYPE = 'items'
 ELASTICSEARCH_UNIQ_KEY = 'url'  # Custom unique key
